@@ -1,0 +1,97 @@
+#!/bin/bash
+
+USAGE=<<END
+USAGE: prerender <options>
+
+    Options:
+
+        --force                      : overwrite existing files (default skips)
+        --clean                      : remove all files before starting
+        --only <pattern>             : restrict rendering to the given pattern
+        --output <dir>               : output directory (default: ./static)
+        --sitemap <sitemap>          : sitemap file: one URL per line
+
+    The --sitemap option requires a little further explanation. It should be a
+    plain text file with a single URL per line. The server part of the URL will
+    be overridden with 'localhost:8000' and the resulting HTML will be taken as
+    the pre-rendered version of that URL.
+
+    If no --sitemap option is provided, then it is assumed there is a sitemap
+    file at: '../crafting-guide/static/sitemap.txt'. If this is not the case,
+    then the script will exit without doing anything.
+
+    Any URLs which appear to already have a local file will be ignored, so it
+    is safe to interrupt this process part-way through and restart.
+
+END
+
+CLEAN="no"
+FORCE="no"
+ONLY=".*"
+OUTPUT_DIR="./static"
+SITEMAP_FILE="../crafting-guide/static/sitemap.txt"
+while [[ "$1" != "" ]]; do
+    case "$1" in
+        "--force") FORCE="yes";;
+        "--help") echo $USAGE; exit 0;;
+        "--clean") CLEAN="yes";;
+        "--only") shift; ONLY="$1";;
+        "--output") shift; OUTPUT_DIR="$1";;
+        "--sitemap") shift; SITEMAP_FILE="$1";;
+    esac
+    shift
+done
+
+if [[ "$SITEMAP_FILE" == "" ]]; then
+    echo $USAGE
+    echo "Please specify a sitemap file"
+    exit 1
+fi
+
+if [[ ! -f "$SITEMAP_FILE" ]]; then
+    echo "Cannot find the specified sitemap file: $SITEMAP_FILE"
+    exit 1
+fi
+
+SCRIPT='/tmp/prerender_script.coffee'
+cat > $SCRIPT <<END
+url      = require('system').args[1]
+page     = require('webpage').create()
+path     = "#{url}".replace(/http:\/\/[^/]*/, '').replace(/^\//, '')
+localUrl = "http://local.crafting-guide.com:8000/#{path}"
+
+page.open localUrl, (status)->
+    if status isnt 'success'
+        console.error "Could not load #{url}"
+        phantom.exit(1)
+
+    setTimeout (->
+        console.log page.content
+        phantom.exit(0)
+    ), 5000
+END
+
+if [[ "$CLEAN" == "yes" ]]; then
+    find "$OUTPUT_DIR/browse" -name "*.html" | xargs rm
+fi
+
+cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
+    OUTPUT_FILE=$(sed 's/http:\/\/[^/]*\///' <<< $URL)
+    OUTPUT_FILE="$OUTPUT_DIR/$OUTPUT_FILE/index.html"
+    OUTPUT_FILE=$(sed 's/\/\//\//' <<< $OUTPUT_FILE)
+
+    if [[ ! -e "$OUTPUT_FILE" || "$FORCE" == "yes" ]]; then
+        mkdir -p $(dirname "$OUTPUT_FILE")
+        echo "prerendering $URL into $OUTPUT_FILE"
+        phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE" 2>/dev/null
+        if [[ "$?" != "0" ]]; then
+            echo "An error occured rendering $URL"
+            rm "$OUTPUT_FILE" 2>/dev/null
+        fi
+    else
+        echo "Skipping $URL..."
+    fi
+done
+
+rm $SCRIPT
+
