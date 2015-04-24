@@ -4,7 +4,7 @@ TL;DR—Don't worry about this repository. It's strictly for administrative purp
 
 ---
 
-This repository supports [http://github.com/andrewminer/crafting-guide] by containing all the pre-rendered HTML files generated for each page of the site.
+This repository supports [Crafting Guide](http://github.com/andrewminer/crafting-guide) by containing all the pre-rendered HTML files generated for each page of the site.
 
 Crafting Guide is a pure-client JavaScript application built using [BackBone.js](http://backbonejs.org), and therefore really only has a single HTML page. All other seeming pages are actually created when BackBone.js evaluates the current URL and engages the appropriate JavaScript code to create that page.
 
