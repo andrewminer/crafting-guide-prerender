@@ -1,0 +1,25 @@
+{
+  "name": "crafting-guide-prerender",
+  "version": "1.0.0",
+  "description": "Pre-rendered HTML files for Crafting Guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andrewminer/crafting-guide-prerender"
+  },
+  "keywords": [
+    "crafting",
+    "guide",
+    "minecraft",
+    "mods"
+  ],
+  "author": "Andrew Miner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewminer/crafting-guide-prerender/issues"
+  },
+  "homepage": "https://github.com/andrewminer/crafting-guide-prerender"
+}
