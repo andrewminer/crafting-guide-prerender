@@ -21,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/andrewminer/crafting-guide-prerender/issues"
   },
-  "homepage": "https://github.com/andrewminer/crafting-guide-prerender"
+  "homepage": "https://github.com/andrewminer/crafting-guide-prerender",
+  "dependencies": {
+    "crafting-guide": "^1.0.5",
+    "crafting-guide-common": "^1.4.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-shell": "^1.1.2",
+    "underscore": "^1.8.3"
+  }
 }

@@ -17,8 +17,8 @@ USAGE: prerender <options>
     the pre-rendered version of that URL.
 
     If no --sitemap option is provided, then it is assumed there is a sitemap
-    file at: '../crafting-guide/static/sitemap.txt'. If this is not the case,
-    then the script will exit without doing anything.
+    file at: './static/sitemap.txt'. If this is not the case, then the script
+    will exit without doing anything.
 
     Any URLs which appear to already have a local file will be ignored, so it
     is safe to interrupt this process part-way through and restart.
@@ -29,7 +29,7 @@ CLEAN="no"
 FORCE="no"
 ONLY=".*"
 OUTPUT_DIR="./static"
-SITEMAP_FILE="../crafting-guide/static/sitemap.txt"
+SITEMAP_FILE="./static/sitemap.txt"
 while [[ "$1" != "" ]]; do
     case "$1" in
         "--force") FORCE="yes";;
@@ -88,8 +88,6 @@ cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
             echo "An error occured rendering $URL"
             rm "$OUTPUT_FILE" 2>/dev/null
         fi
-    else
-        echo "Skipping $URL..."
     fi
 done
 
