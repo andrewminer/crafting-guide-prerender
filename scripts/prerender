@@ -5,6 +5,7 @@ USAGE: prerender <options>
 
     Options:
 
+        --count                      : the number of processes to run
         --force                      : overwrite existing files (default skips)
         --clean                      : remove all files before starting
         --only <pattern>             : restrict rendering to the given pattern
@@ -29,9 +30,11 @@ CLEAN="no"
 FORCE="no"
 ONLY=".*"
 OUTPUT_DIR="./static"
+PROCESS_COUNT=20
 SITEMAP_FILE="./static/sitemap.txt"
 while [[ "$1" != "" ]]; do
     case "$1" in
+        "--count") shift; COUNT="$1";;
         "--force") FORCE="yes";;
         "--help") echo $USAGE; exit 0;;
         "--clean") CLEAN="yes";;
@@ -58,7 +61,7 @@ cat > $SCRIPT <<END
 url      = require('system').args[1]
 page     = require('webpage').create()
 path     = "#{url}".replace(/http:\/\/[^/]*/, '').replace(/^\//, '')
-localUrl = "http://local.crafting-guide.com:8000/#{path}"
+localUrl = "http://prerender.crafting-guide.com:8000/#{path}"
 
 page.open localUrl, (status)->
     if status isnt 'success'
@@ -81,15 +84,31 @@ cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
     OUTPUT_FILE=$(sed 's/\/\//\//' <<< $OUTPUT_FILE)
 
     if [[ ! -e "$OUTPUT_FILE" || "$FORCE" == "yes" ]]; then
-        mkdir -p $(dirname "$OUTPUT_FILE")
-        echo "prerendering $URL into $OUTPUT_FILE"
-        phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE" 2>/dev/null
-        if [[ "$?" != "0" ]]; then
-            echo "An error occured rendering $URL"
-            rm "$OUTPUT_FILE" 2>/dev/null
-        fi
+        WAIT="YES"
+        while [[ "$WAIT" == "YES" ]]; do
+            COUNT=$(jobs | grep '^\[' | wc -l)
+            if (( $COUNT > $PROCESS_COUNT )); then
+                sleep 1
+            else
+                WAIT="NO"
+            fi
+        done
+
+        (
+            mkdir -p $(dirname "$OUTPUT_FILE")
+            echo "prerendering $URL into $OUTPUT_FILE"
+            phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE.tmp" 2>/dev/null
+            if [[ "$?" == "0" ]]; then
+                mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE" &>/dev/null
+            else
+                echo "An error occured rendering $URL"
+                rm "$OUTPUT_FILE.tmp" 2>/dev/null
+            fi
+        ) &
     fi
 done
+
+wait
 
 rm $SCRIPT
 
