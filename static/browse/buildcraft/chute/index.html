@@ -1,26 +1,11 @@
-TypeError: 'undefined' is not a function (evaluating '_.isString(obj)')
-
-  http://local.crafting-guide.com:8000/js/main.js:11513
-  http://local.crafting-guide.com:8000/js/main.js:11498
-  http://local.crafting-guide.com:8000/js/main.js:11649
-  http://local.crafting-guide.com:8000/js/main.js:10867
-  http://local.crafting-guide.com:8000/js/main.js:10804
-  http://local.crafting-guide.com:8000/js/main.js:10760
-  http://local.crafting-guide.com:8000/js/main.js:10669
-  http://local.crafting-guide.com:8000/js/main.js:10588
-  http://local.crafting-guide.com:8000/js/main.js:5148
-  http://local.crafting-guide.com:8000/js/main.js:5178
-  http://local.crafting-guide.com:8000/js/main.js:1 in s
-  http://local.crafting-guide.com:8000/js/main.js:1 in e
-  http://local.crafting-guide.com:8000/js/main.js:18819
 <!DOCTYPE html><html><head>
-    <title>The Ultimate Minecraft Crafting Guide</title>
+    <title>Chute | The Ultimate Minecraft Crafting Guide</title>
     <meta charset="UTF-8">
     <link href="/images/favicon.png" rel="icon" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
-    <div class="view__feedback"></div>
+    <div class="view__feedback" style="left: -300px; "><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><button name="send" disabled="disabled">send</button><div class="error hideable hidden"><p>Sending failed. Please try again later.</p></div><div class="label"><img src="/images/paper.png"><p>Feedback</p></div></div>
     <div class="view__screen"></div>
     <div class="content">
       <div class="view__header">
@@ -29,23 +14,24 @@ TypeError: 'undefined' is not a function (evaluating '_.isString(obj)')
         </h1>
         <div class="addthis_sharing_toolbox"></div>
         <div class="divider bottom">
-          <div class="login"><span class="name"></span><a href="/login">Login</a></div>
+          <div class="login"><span class="name"></span><a href="/login/">Login</a></div>
         </div>
-        <div class="navBar"><a data-page="home" href="/">
+        <div class="navBar"><a data-page="home" href="/" style="z-index: 104; ">
             <p>Home</p>
-            <div class="dot"></div></a><a data-page="configure" href="/configure/">
+            <div class="dot" style="opacity: 0; "></div></a><a data-page="configure" href="/configure/" style="z-index: 103; ">
             <p>Configure</p>
-            <div class="dot"></div></a><a data-page="browse" href="/browse/">
+            <div class="dot" style="opacity: 0; "></div></a><a data-page="browse" href="/browse/" style="z-index: 102; ">
             <p>Browse</p>
-            <div class="dot"></div></a><a data-page="craft" href="/craft/">
+            <div class="dot" style="opacity: 1; "></div></a><a data-page="craft" href="/craft/" style="z-index: 101; ">
             <p>Craft</p>
-            <div class="dot"></div></a>
+            <div class="dot" style="opacity: 0; "></div></a>
           <div class="view__item_selector search">
             <p>find an item...</p>
           </div>
         </div>
       </div>
-      <div class="page hideable"></div>
+      <div style="max-height: 0" class="page hideable view__item_page hiding"><div class="sidebar"><div class="titleImage"><a><img src="/images/unknown.png"></a></div><a target="new" class="officialPage externalLink hideable hidden"><p>Official Documentation</p></a><button class="large craftingPlan">See Crafting Plan</button><ins class="view__adsense"></ins></div><div class="mainBody"><h1 class="name">Chute</h1><div class="byline hideable hidden"><p>from <a href="/browse/buildcraft/">Buildcraft</a></p></div><div class="recipes section hideable hidden"><h2>Recipes</h2><div class="panel"><div class="view__full_recipe"><div class="input"><h3>Ingredients</h3><div class="view__inventory"><div class="item_container"></div><div class="empty_placeholder hideable hidden">nothing</div><div class="view__item_selector hideable hidden button"><p>add an item...</p></div></div></div><div class="pattern"><table class="view__crafting_grid"><tbody><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr></tbody></table><div class="tool"><a></a></div></div><div class="output"><h3>Produces</h3><div class="view__inventory"><div class="item_container"></div><div class="empty_placeholder hideable hidden">nothing</div><div class="view__item_selector hideable hidden button"><p>add an item...</p></div></div></div></div><div class="view__full_recipe"><div class="input"><h3>Ingredients</h3><div class="view__inventory"><div class="item_container"></div><div class="empty_placeholder hideable hidden">nothing</div><div class="view__item_selector hideable hidden button"><p>add an item...</p></div></div></div><div class="pattern"><table class="view__crafting_grid"><tbody><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr><tr><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td><td><div class="view__slot"><a><img src="/images/empty.png"><div class="quantity"></div></a></div></td></tr></tbody></table><div class="tool"><a></a></div></div><div class="output"><h3>Produces</h3><div class="view__inventory"><div class="item_container"></div><div class="empty_placeholder hideable hidden">nothing</div><div class="view__item_selector hideable hidden button"><p>add an item...</p></div></div></div></div></div></div><div class="description section hideable hidden view__markdown_section"><h2>Description</h2><div class="panel"><div class="waiting hideable hiding"><img src="/images/wait.gif"></div><div class="markdown hideable hidden"></div><div class="editor hideable hidden"><textarea></textarea><div class="sizer"></div></div><div class="creating hideable hidden"><p>Please help by adding a description!</p></div><div class="buttons hideable hidden"><div class="error hideable hidden"><p></p></div><button class="return hideable hidden">return</button><button class="cancel hideable hidden">cancel</button><button class="preview hideable hidden">preview</button><button class="save hideable hidden">save</button><button class="edit hideable">edit</button></div><div class="confirming hideable hidden"><p>Thanks for your help!</p><p>Your changes will appear on the site in a few minutes.</p></div><div class="appologizing hideable hidden"><p>Sorry, but something went wrong.</p><p>Please try again after a few moments.</p></div></div></div><div class="videos section hideable hidden"><h2>Videos</h2><div class="panel"></div></div><div class="view__item_group usedToMake section hideable hidden"><h2></h2><div class="panel"></div></div><div class="view__item_group usedAsToolToMake section hideable hidden"><h2></h2><div class="panel"></div></div><div class="view__item_group similar section hideable hidden"><h2></h2><div class="panel"></div></div></div></div>
+      <div class="page-loading"><img src="/images/wait.gif"></div>
       <div class="view__footer">
         <div class="divider top"></div>
         <div class="left">
@@ -88,12 +74,6 @@ TypeError: 'undefined' is not a function (evaluating '_.isString(obj)')
         <div class="divider bottom"></div>
       </div>
     </div>
-    <script src="/js/underscore.js"></script>
-    <script src="/js/jquery.js"></script>
-    <script src="/js/backbone.js"></script>
-    <script src="/js/jade.js"></script>
-    <script src="/js/markdown.js"></script>
-    <script src="/js/when.js"></script>
     <script src="/js/main.js"></script>
     <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>

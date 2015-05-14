@@ -97,7 +97,8 @@ cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
         (
             mkdir -p $(dirname "$OUTPUT_FILE")
             echo "prerendering $URL into $OUTPUT_FILE"
-            phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE.tmp" 2>/dev/null
+            echo "prerendering $URL into $OUTPUT_FILE" 2>> error.log
+            phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE.tmp"
             if [[ "$?" == "0" ]]; then
                 mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE" &>/dev/null
             else
@@ -107,8 +108,3 @@ cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
         ) &
     fi
 done
-
-wait
-
-rm $SCRIPT
-
