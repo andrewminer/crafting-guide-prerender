@@ -1,16 +1,16 @@
 <!DOCTYPE html><html><head>
-    <title>The Ultimate Minecraft Crafting Guide</title>
+    <title>Minecraft Crafting Guide</title>
     <meta charset="UTF-8">
     <link href="/images/favicon.png" rel="icon" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-  </head>
+  <meta name="description" content="Find everything you need to know about your Minecraft mod pack and use the interactive crafting planner for step-by-step instructions and full lists of materials"></head>
   <body>
     <div class="view__feedback" style="left: -250px; "><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><button name="send" disabled="disabled">send</button><div class="error hideable hidden"><p>Sending failed. Please try again later.</p></div><div class="label"><img src="/images/paper.png"><p>Feedback</p></div></div>
     <div class="view__screen"></div>
     <div class="content">
       <div class="view__header">
         <h1><a href="/" class="logo"><img src="/images/workbench_front.png"></a>
-          <p>Crafting Guide for Minecraft</p>
+          <p>Minecraft Crafting Guide</p>
         </h1>
         <div class="addthis_sharing_toolbox"></div>
         <div class="divider bottom">
@@ -31,14 +31,20 @@
         </div>
       </div>
       <div style="max-height: 0" class="page hideable view__home_page"><div class="sidebar"><div class="view__adsense"><div class="sidebar_skyscraper"></div><div class="sidebar_skyscraper"></div><div class="sidebar_skyscraper"></div></div></div><div class="mainBody"><div class="section"><h2>Welcome!</h2><div class="panel"><div class="entry"><p class="intro">Crafting Guide is the ultimate resource for Minecraft. Whether you're punching trees or building
-reactors, you'll find Crafting Guide indispensable.</p><ul><li class="intro">Can't remember the recipe for a <a href="/browse/buildcraft/quarry">BuildCraft Quarry</a>?</li><li class="intro">Curious to see all the blocks added by <a href="/browse/railcraft">Railcraft</a>?</li><li class="intro">Want step-by-step directions for making a full <a href="/craft/quantumsuit_bodyarmor:quantumsuit_boots:quantumsuit_helmet:quantumsuit_leggings">IC2 QuantumSuit</a>?</li></ul><p class="intro">No problem. Crafting Guide can do it all.</p><p><a class="section-link" href="/configure">Configure</a><a> which mods you're using, and the entire
-site will update itself to your mod pack.</a></p><p><a class="section-link" href="/browse">Browse</a><a> through your own customized item catalog to
+reactors, you'll find Crafting Guide indispensable.</p><ul><li class="intro">Can't remember the recipe for a <a href="/browse/buildcraft/quarry">BuildCraft Quarry</a>?</li><li class="intro">Curious to see all the blocks added by <a href="/browse/railcraft">Railcraft</a>?</li><li class="intro">Want step-by-step directions for making a full <a href="/craft/quantumsuit_bodyarmor:quantumsuit_boots:quantumsuit_helmet:quantumsuit_leggings">IC2 QuantumSuit</a>?</li></ul><p class="intro">No problem. Crafting Guide can do it all.</p><p><a class="section-link" href="/configure">Configure</a> which mods you're using, and the entire
+site will update itself to your mod pack.</p><p><a class="section-link" href="/browse">Browse</a> through your own customized item catalog to
 see full recipe lists, related items, recipes added by each tool, and even which items can be
-made from the item you're looking at.</a></p><p><a class="section-link" href="/craft">Craft</a><a> any number of items from your mod pack to see a
+made from the item you're looking at.</p><p><a class="section-link" href="/craft">Craft</a> any number of items from your mod pack to see a
 full list of raw ingredients, and recipe-by-recipe instructions on how to make everything on
 your list. No item is too complex, and no build is too big.
-</a></p></div></div></div><div class="section"><h2><a>What's new?</a></h2><div class="panel"><h3><a>2015-04-30</a></h3><div class="entry"><p><a>I've been working on a big new feature for a while now, but I didn't want to leave everyone
-without anything new for so long... So, I've just finished adding </a><a href="/browse/minefactory_reloaded">MineFactory Reloaded</a>! Enjoy!
+</p></div></div></div><div class="section"><h2>What's new?</h2><div class="panel"><h3>2015-05-13</h3><div class="entry"><p>As of today, you can now add and edit item descriptions right on Crafting Guide. This feature is
+starting small with just item descriptions, but eventually all the content on the site will be
+editable. All you need is a (free) GitHub account, and you're ready to go!</p><p>For those more comfortable with a regular text editor, all the content is still in GitHub under
+the <a href="https://github.com/andrewminer/crafting-guide-data">crafting-guide-data</a> repo.
+Just follow the instructions, and you can submit content via pull request instead of using the
+website's editor.
+</p></div><h3>2015-04-30</h3><div class="entry"><p>I've been working on a big new feature for a while now, but I didn't want to leave everyone
+without anything new for so long... So, I've just finished adding <a href="/browse/minefactory_reloaded">MineFactory Reloaded</a>! Enjoy!
 </p></div><h3>2015-04-20</h3><div class="entry"><p>Okay... big changes on the crafting page! Instead of having four little boxes for the various
 parts of the crafting plan, the new page shows all the steps as one long list.  In addition, you
 get a lot more control over the plan. Now, you can even mark individual steps as complete to get
@@ -82,17 +88,7 @@ Thanks for the anonymous suggestion via the <a href="/configure">Configure</a> p
 Crafting Guide is missing a mod you use, feel free to head over there to suggest it.</p><p>I've also added support for <a href="/browse/iron_chests">Iron Chests</a>, and with them, I've
 taken advantage of some of the new features of the site to add descriptions for each item.
 </p></div><h3>2015-03-21</h3><div class="entry"><p>I spent some time today cleaning up the various animations throughout the site, and working on
-page rendering performance. Things should generally feel a lot smoother now.
-</p></div><h3>2015-03-20</h3><div class="entry"><p>Recently, I've been working on allowing mod authors to add more detail to the item pages here on
-Crafting Guide. To that end, there are a couple of new features to announce. First, item detail
-pages can now show text and pictures to describe the item (check out the <a href="/browse/buildcraft/assembly_table">Assembly Table</a> for an example).  Second, mods can
-now include tutorial pages containing similar text and pictures to describe tricky concepts,
-complex builds, or anything else their mod has to offer (see <a href="/browse/buildcraft/tutorials/gates_wires_and_chips">Gates, Wires, and Chips</a> for an
-example). Finally, both item pages and tutorial pages can display a list of YouTube videos. Only
-a few pages in the Buildcraft section have been updated so far, but keep an eye out for
-more to come!</p><p>And... the second piece of news is that Crafting Guide now supports <a href="/browse/thermal_dynamics">Thermal Dynamics</a>! This mod is an off-shoot from <a href="/browse/thermal_expansion">Thermal Expansion</a> which contains all the ducts (item, fluid
-and redstone flux) you're used to from TE3 plus some extras both for higher capacity throughput
-and combining item ducts with redstone flux ducts.</p></div></div></div></div></div>
+page rendering performance. Things should generally feel a lot smoother now.</p></div></div></div></div></div>
       <div class="page-loading"><img src="/images/wait.gif"></div>
       <div class="view__footer">
         <div class="divider top"></div>
