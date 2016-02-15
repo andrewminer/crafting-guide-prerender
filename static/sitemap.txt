@@ -3975,14 +3975,18 @@ http://crafting-guide.com/browse/modular_powersuits/advanced_plating/
 http://crafting-guide.com/browse/modular_powersuits/artificial_muscle/
 http://crafting-guide.com/browse/modular_powersuits/basic_plating/
 http://crafting-guide.com/browse/modular_powersuits/carbon_myofiber/
+http://crafting-guide.com/browse/modular_powersuits/computer_chip/
 http://crafting-guide.com/browse/modular_powersuits/control_circuit/
 http://crafting-guide.com/browse/modular_powersuits/force_field_emitter/
 http://crafting-guide.com/browse/modular_powersuits/glider_wing/
 http://crafting-guide.com/browse/modular_powersuits/hologram_emitter/
 http://crafting-guide.com/browse/modular_powersuits/hv_capacitor/
+http://crafting-guide.com/browse/modular_powersuits/insulated_rubber_hose/
 http://crafting-guide.com/browse/modular_powersuits/ion_thruster/
+http://crafting-guide.com/browse/modular_powersuits/liquid_nitrogen_bucket/
 http://crafting-guide.com/browse/modular_powersuits/lux_capacitor/
 http://crafting-guide.com/browse/modular_powersuits/lv_capacitor/
+http://crafting-guide.com/browse/modular_powersuits/magnet/
 http://crafting-guide.com/browse/modular_powersuits/mv_capacitor/
 http://crafting-guide.com/browse/modular_powersuits/myofiber_gel/
 http://crafting-guide.com/browse/modular_powersuits/parachute/
@@ -3993,6 +3997,7 @@ http://crafting-guide.com/browse/modular_powersuits/power_armor_leggings/
 http://crafting-guide.com/browse/modular_powersuits/power_armor_tinker_table/
 http://crafting-guide.com/browse/modular_powersuits/power_fist/
 http://crafting-guide.com/browse/modular_powersuits/servo_motor/
+http://crafting-guide.com/browse/modular_powersuits/solar_panel/
 http://crafting-guide.com/browse/modular_powersuits/solenoid/
 http://crafting-guide.com/browse/modular_powersuits/wiring/
 http://crafting-guide.com/browse/opencomputers/3d_printer/
@@ -4839,6 +4844,7 @@ http://crafting-guide.com/browse/thermal_expansion/gray_rockwool/
 http://crafting-guide.com/browse/thermal_expansion/green_rockwool/
 http://crafting-guide.com/browse/thermal_expansion/hardened_cache/
 http://crafting-guide.com/browse/thermal_expansion/hardened_energy_cell/
+http://crafting-guide.com/browse/thermal_expansion/hardened_energy_cell_frame/
 http://crafting-guide.com/browse/thermal_expansion/hardened_flux_capacitor/
 http://crafting-guide.com/browse/thermal_expansion/hardened_glass/
 http://crafting-guide.com/browse/thermal_expansion/hardened_portable_tank/
@@ -4963,6 +4969,8 @@ http://crafting-guide.com/browse/thermal_expansion/resonant_cache/
 http://crafting-guide.com/browse/thermal_expansion/resonant_ender/
 http://crafting-guide.com/browse/thermal_expansion/resonant_ender_bucket/
 http://crafting-guide.com/browse/thermal_expansion/resonant_energy_cell/
+http://crafting-guide.com/browse/thermal_expansion/resonant_energy_cell_frame_empty/
+http://crafting-guide.com/browse/thermal_expansion/resonant_energy_cell_frame_full/
 http://crafting-guide.com/browse/thermal_expansion/resonant_flux_capacitor/
 http://crafting-guide.com/browse/thermal_expansion/resonant_portable_tank/
 http://crafting-guide.com/browse/thermal_expansion/resonant_satchel/
