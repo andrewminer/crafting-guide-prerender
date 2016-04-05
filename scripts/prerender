@@ -61,7 +61,7 @@ cat > $SCRIPT <<END
 url      = require('system').args[1]
 page     = require('webpage').create()
 path     = "#{url}".replace(/http:\/\/[^/]*/, '').replace(/^\//, '')
-localUrl = "http://prerender.crafting-guide.com:8000/#{path}"
+localUrl = "http://prerender.crafting-guide.com:8080/#{path}"
 
 page.open localUrl, (status)->
     if status isnt 'success'

@@ -15,19 +15,40 @@ module.exports = (grunt)->
 
     grunt.config.init
 
-        shell:
-            sitemap:
-                command: './scripts/sitemap > ./static/sitemap.txt'
-            prerender:
-                command: './scripts/prerender --sitemap ./static/sitemap.txt'
+        clean:
+            dist: ['./dist']
 
-    grunt.registerTask 'default', []
+        static:
+            options:
+                mode: 'gzip'
+            files: [
+                {expand: true, cwd:'./build/static', src:'**/*.html', dest:'./dist/'}
+                {expand: true, cwd:'./build/static', src:'**/*.txt', dest:'./dist/'}
+            ]
 
-    grunt.registerTask 'prerender', ['shell:prerender']
+    # Composite Tasks ##################################################################################################
 
-    grunt.registerTask 'sitemap', ['shell:sitemap']
+    grunt.registerTask 'default', 'rebuilds the sitemap and prerenders any missing pages',
+        ['script:sitemap', 'script:prerender']
 
-    grunt.registerTask 'use-local-deps', ->
+    grunt.registerTask 'deploy:prod', 'deploy the project to production via CircleCI',
+        ['script:deploy:prod']
+
+    grunt.registerTask 'deploy:staging', 'deploy the project to staging via CircleCI',
+        ['script:deploy:staging']
+
+    grunt.registerTask 'dist', 'prepares the prerendered files for upload to Amazon S3',
+        ['default', 'compress']
+
+    grunt.registerTask 'prerender', 'prerender any missing files based upon the sitemap'
+        ['script:prerender']
+
+    grunt.registerTask 'sitemap', 'produce a sitemap based upon the data files for the site'
+        ['script:sitemap']
+
+    # Code Tasks #######################################################################################################
+
+    grunt.registerTask 'use-local-deps', 'replace various node modules to use the local versions', ->
         grunt.file.mkdir './node_modules'
 
         grunt.file.delete './node_modules/crafting-guide', force:true
@@ -35,3 +56,30 @@ module.exports = (grunt)->
 
         grunt.file.delete './node_modules/crafting-guide-common', force:true
         fs.symlinkSync '../../crafting-guide-common/', './node_modules/crafting-guide-common'
+
+    # Script Tasks #####################################################################################################
+
+    grunt.registerTask 'script:deploy:prod', "deploy code by copying to the production branch", ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/deploy', args:['--production'], opts:{stdio:'inherit'}, (error)-> done(error)
+
+    grunt.registerTask 'script:deploy:staging', "deploy code by copying to the staging branch", ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/deploy', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
+
+    grunt.registerTask 'script:sitemap', "produce a sitemap based upon the full website's data", ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/sitemap', opts:{stdio:'inherit'}, (error)-> done(error)
+
+    grunt.registerTask 'script:prerender', "prerender all HTML files listed in the sitemap", ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/prerender', args:['--sitemap ./static/sitemap.txt'],
+          opts:{stdio:'inherit'}, (error)-> done(error)
+
+    grunt.registerTask 'script:s3_upload:prod', 'uploads all static content to S3', ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/s3_upload', args:['--prod'], opts:{stdio:'inherit'}, (error)-> done(error)
+
+    grunt.registerTask 'script:s3_upload:staging', 'uploads all static content to S3', ->
+      done = this.async()
+      grunt.util.spawn cmd:'./scripts/s3_upload', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)

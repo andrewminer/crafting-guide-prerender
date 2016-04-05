@@ -3,7 +3,6 @@
 {Mod}              = require 'crafting-guide'
 {ModParser}        = require 'crafting-guide'
 {ModVersionParser} = require 'crafting-guide'
-_                  = require 'underscore'
 fs                 = require 'fs'
 {DefaultMods}      = require('crafting-guide').constants
 {Logger}           = require 'crafting-guide-common'
@@ -21,9 +20,9 @@ base = 'http://crafting-guide.com'
 urls = [
     "#{base}/"
     "#{base}/browse/"
-    "#{base}/configure/"
     "#{base}/craft/"
     "#{base}/login/"
+    "#{base}/news/"
 ]
 
 for modSlug, modData of DefaultMods
