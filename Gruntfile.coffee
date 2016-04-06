@@ -68,11 +68,25 @@ module.exports = (grunt)->
 
     grunt.registerTask 'script:deploy:prod', "deploy code by copying to the production branch", ->
         done = this.async()
-        grunt.util.spawn cmd:'./scripts/deploy', args:['--production'], opts:{stdio:'inherit'}, (error)-> done(error)
+        grunt.util.spawn(
+            {
+                cmd: './scripts/deploy'
+                args: ['--prod']
+                opts: {stdio:'inherit'}
+            },
+            (error)-> done(error)
+        )
 
     grunt.registerTask 'script:deploy:staging', "deploy code by copying to the staging branch", ->
         done = this.async()
-        grunt.util.spawn cmd:'./scripts/deploy', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
+        grunt.util.spawn(
+            {
+                cmd: './scripts/deploy'
+                args: ['--staging']
+                opts: {stdio:'inherit'}
+            },
+            (error)-> done(error)
+        )
 
     grunt.registerTask 'script:sitemap', "produce a sitemap based upon the full website's data", ->
         done = this.async()
