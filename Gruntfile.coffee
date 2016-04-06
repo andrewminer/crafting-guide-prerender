@@ -92,8 +92,22 @@ module.exports = (grunt)->
 
     grunt.registerTask 'script:s3_upload:prod', 'uploads all static content to S3', ->
         done = this.async()
-        grunt.util.spawn cmd:'./scripts/s3_upload', args:['--prod'], opts:{stdio:'inherit'}, (error)-> done(error)
+        grunt.util.spawn(
+            {
+                cmd: './scripts/s3_upload'
+                args: ['--prod']
+                opts: {stdio:'inherit'}
+            },
+            (error)-> done(error)
+        )
 
     grunt.registerTask 'script:s3_upload:staging', 'uploads all static content to S3', ->
         done = this.async()
-        grunt.util.spawn cmd:'./scripts/s3_upload', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
+        grunt.util.spawn(
+            {
+                cmd: './scripts/s3_upload'
+                args: ['--staging']
+                opts: {stdio:'inherit'}
+            },
+            (error)-> done(error)
+        )
