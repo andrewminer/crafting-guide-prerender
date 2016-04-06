@@ -18,18 +18,19 @@ module.exports = (grunt)->
         clean:
             dist: ['./dist']
 
-        static:
-            options:
-                mode: 'gzip'
-            files: [
-                {expand: true, cwd:'./build/static', src:'**/*.html', dest:'./dist/'}
-                {expand: true, cwd:'./build/static', src:'**/*.txt', dest:'./dist/'}
-            ]
+        compress:
+            static:
+                options:
+                    mode: 'gzip'
+                files: [
+                    {expand: true, cwd:'./static', src:'**/*.html', dest:'./dist'}
+                    {expand: true, cwd:'./static', src:'**/*.txt', dest:'./dist'}
+                ]
 
     # Composite Tasks ##################################################################################################
 
     grunt.registerTask 'default', 'rebuilds the sitemap and prerenders any missing pages',
-        ['script:sitemap', 'script:prerender']
+        ['prerender']
 
     grunt.registerTask 'deploy:prod', 'deploy the project to production via CircleCI',
         ['script:deploy:prod']
@@ -38,13 +39,19 @@ module.exports = (grunt)->
         ['script:deploy:staging']
 
     grunt.registerTask 'dist', 'prepares the prerendered files for upload to Amazon S3',
-        ['default', 'compress']
+        ['clean', 'compress']
 
     grunt.registerTask 'prerender', 'prerender any missing files based upon the sitemap',
-        ['script:prerender']
+        ['script:sitemap', 'script:prerender']
 
     grunt.registerTask 'sitemap', 'produce a sitemap based upon the data files for the site',
         ['script:sitemap']
+
+    grunt.registerTask 'upload:prod', 'upload the project to the production Amazon S3 environment',
+        ['dist', 'script:s3_upload:prod']
+
+    grunt.registerTask 'upload:staging', 'upload the project the staging Amazon S3 environment',
+        ['dist', 'script:s3_upload:staging']
 
     # Code Tasks #######################################################################################################
 

@@ -1,4 +1,5 @@
 .DS_Store
 aws.config
+dist
 node_modules
 error.log
