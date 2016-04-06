@@ -1,3 +1,7 @@
+dependencies:
+    pre:
+        - sudo -H pip install s3cmd
+        - npm install -g grunt-cli
 deployment:
     staging:
         branch: staging
