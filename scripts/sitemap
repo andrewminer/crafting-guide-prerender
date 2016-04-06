@@ -1,11 +1,8 @@
 #!/usr/bin/env coffee
 
-{Mod}              = require 'crafting-guide'
-{ModParser}        = require 'crafting-guide'
-{ModVersionParser} = require 'crafting-guide'
-fs                 = require 'fs'
-{DefaultMods}      = require('crafting-guide').constants
-{Logger}           = require 'crafting-guide-common'
+{Mod, ModParser, ModVersionParser, constants} = require 'crafting-guide'
+fs                                            = require 'fs'
+{Logger}                                      = require 'crafting-guide-common'
 
 ########################################################################################################################
 
@@ -25,7 +22,7 @@ urls = [
     "#{base}/news/"
 ]
 
-for modSlug, modData of DefaultMods
+for modSlug, modData of constants.defaultMods
     modSlugs[modSlug] = modSlug
 
     mod = new Mod slug:modSlug

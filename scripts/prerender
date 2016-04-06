@@ -78,6 +78,7 @@ if [[ "$CLEAN" == "yes" ]]; then
     find "$OUTPUT_DIR/browse" -name "*.html" | xargs rm
 fi
 
+rm error.log && touch error.log
 cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
     OUTPUT_FILE=$(sed 's/http:\/\/[^/]*\///' <<< $URL)
     OUTPUT_FILE="$OUTPUT_DIR/$OUTPUT_FILE/index.html"
@@ -97,8 +98,8 @@ cat $SITEMAP_FILE | grep "$ONLY" | while read URL; do
         (
             mkdir -p $(dirname "$OUTPUT_FILE")
             echo "prerendering $URL into $OUTPUT_FILE"
-            echo "prerendering $URL into $OUTPUT_FILE" 2>> error.log
-            phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE.tmp"
+            echo "prerendering $URL into $OUTPUT_FILE" >> error.log
+            phantomjs --web-security=false --load-images=false $SCRIPT "$URL" >"$OUTPUT_FILE.tmp" 2>>error.log
             if [[ "$?" == "0" ]]; then
                 mv "$OUTPUT_FILE.tmp" "$OUTPUT_FILE" &>/dev/null
             else

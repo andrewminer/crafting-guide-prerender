@@ -40,10 +40,10 @@ module.exports = (grunt)->
     grunt.registerTask 'dist', 'prepares the prerendered files for upload to Amazon S3',
         ['default', 'compress']
 
-    grunt.registerTask 'prerender', 'prerender any missing files based upon the sitemap'
+    grunt.registerTask 'prerender', 'prerender any missing files based upon the sitemap',
         ['script:prerender']
 
-    grunt.registerTask 'sitemap', 'produce a sitemap based upon the data files for the site'
+    grunt.registerTask 'sitemap', 'produce a sitemap based upon the data files for the site',
         ['script:sitemap']
 
     # Code Tasks #######################################################################################################
@@ -60,26 +60,33 @@ module.exports = (grunt)->
     # Script Tasks #####################################################################################################
 
     grunt.registerTask 'script:deploy:prod', "deploy code by copying to the production branch", ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/deploy', args:['--production'], opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        grunt.util.spawn cmd:'./scripts/deploy', args:['--production'], opts:{stdio:'inherit'}, (error)-> done(error)
 
     grunt.registerTask 'script:deploy:staging', "deploy code by copying to the staging branch", ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/deploy', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        grunt.util.spawn cmd:'./scripts/deploy', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
 
     grunt.registerTask 'script:sitemap', "produce a sitemap based upon the full website's data", ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/sitemap', opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        child = grunt.util.spawn {cmd: './scripts/sitemap'}, (error)-> done(error)
+        child.stdout.pipe fs.createWriteStream './static/sitemap.txt'
 
     grunt.registerTask 'script:prerender', "prerender all HTML files listed in the sitemap", ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/prerender', args:['--sitemap ./static/sitemap.txt'],
-          opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        grunt.util.spawn(
+            {
+                cmd: './scripts/prerender'
+                args: ['--sitemap ./static/sitemap.txt']
+                opts: {stdio:'inherit'}
+            },
+            (error)-> done(error)
+        )
 
     grunt.registerTask 'script:s3_upload:prod', 'uploads all static content to S3', ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/s3_upload', args:['--prod'], opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        grunt.util.spawn cmd:'./scripts/s3_upload', args:['--prod'], opts:{stdio:'inherit'}, (error)-> done(error)
 
     grunt.registerTask 'script:s3_upload:staging', 'uploads all static content to S3', ->
-      done = this.async()
-      grunt.util.spawn cmd:'./scripts/s3_upload', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)
+        done = this.async()
+        grunt.util.spawn cmd:'./scripts/s3_upload', args:['--staging'], opts:{stdio:'inherit'}, (error)-> done(error)

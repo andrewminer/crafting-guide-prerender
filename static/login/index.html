@@ -1,91 +1,38 @@
 <!DOCTYPE html><html><head>
     <title>Login | Minecraft Crafting Guide</title>
-    <meta charset="UTF-8">
     <link href="/images/favicon.png" rel="icon" type="image/png">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=480">
   </head>
   <body>
-    <div class="view__feedback" style="left: -250px; "><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><button name="send" disabled="disabled">send</button><div class="error hideable hidden"><p>Sending failed. Please try again later.</p></div><div class="label"><img src="/images/paper.png"><p>Feedback</p></div></div>
-    <div class="view__screen"></div>
-    <div class="content">
-      <div class="view__header">
-        <h1><a href="/" class="logo"><img src="/images/workbench_front.png"></a>
-          <p>Minecraft Crafting Guide</p>
-        </h1>
-        <div class="addthis_sharing_toolbox"></div>
-        <div class="divider bottom">
-          <div class="login"><span class="name"></span><a href="/login/">Login</a></div>
-        </div>
-        <div class="navBar"><a data-page="home" href="/" style="z-index: 104; ">
-            <p>Home</p>
-            <div class="dot" style="opacity: 0; "></div></a><a data-page="configure" href="/configure/" style="z-index: 103; ">
-            <p>Configure</p>
-            <div class="dot" style="opacity: 0; "></div></a><a data-page="browse" href="/browse/" style="z-index: 102; ">
-            <p>Browse</p>
-            <div class="dot" style="opacity: 0; "></div></a><a data-page="craft" href="/craft/" style="z-index: 101; ">
-            <p>Craft</p>
-            <div class="dot" style="opacity: 0; "></div></a>
-          <div class="view__item_selector search">
-            <p>find an item...</p>
-          </div>
-        </div>
-      </div>
-      <div style="max-height: 0" class="page hideable view__login_page"><div class="two-thirds-content hideable ready-to-login"><img src="/images/github-login-large.png" class="float-right"><h1>Login with GitHub</h1><p>Use your GitHub credentials to login and make changes on Crafting Guide. No GitHub account? Don't worry, you
-can get one for free. <a class="read-more" href="#">read more...</a></p><div class="read-more-content slideable closed"><p>All changes you make on the site get submitted directly to our GitHub repo, and then published through
-the same automated deployment process as changes made by anyone else. That way, anyone can contribute
-easily: whether developer or end user.</p><p>To log in, we redirect you to GitHub's site, and once you're signed in, they'll send you back here. We
-never see your credentials, and only get the minimum set of permissions necessary to submit changes to
-the Crafting Guide repo on your behalf.</p><p>GitHub offers free accounts, so even if you don't already have one, you've got nothing to lose!
-</p></div><div class="actions"><button class="huge">Login with GitHub</button></div><div class="clear"></div></div><div class="two-thirds-content hideable hidden server-down"><h1>Sorry!</h1><p>Our interactive editing service is down right now, but you can always submit a pull request over at
-the <a href="https://github.com/andrewminer/crafting-guide">Crafting Guide GitHub Repository</a>. We'll have
-the editing service back up soon!
-</p></div><div class="two-thirds-content hideable hidden invalid-callback"><img src="/images/github-login-large.png" class="float-right"><h1>Oops!</h1><p>Sorry about that, but it looks like something went wrong with your GitHub login. Click the button below to
-try again, or use the Feedback button on the left to let us know, and we'll try to help.
-</p><div class="actions"><button class="huge">Login with GitHub</button></div><div class="clear"></div></div><div class="two-thirds-content hideable hidden fetching-token"><img src="/images/github-login-large.png" class="float-right"><h1>Completing log in...</h1><p>Hang on just a second while we finish logging you in...</p><div class="actions"><img src="/images/wait.gif"></div><div class="clear"></div></div><div class="two-thirds-content hideable hidden logged-in"><img src="/images/github-login-large.png" class="float-right"><h1>All set!</h1><div class="clear"></div></div></div>
-      <div class="page-loading"><img src="/images/wait.gif"></div>
-      <div class="view__footer">
-        <div class="divider top"></div>
-        <div class="left">
-          <h2>
-            <p>About</p>
-          </h2>
-          <p>
-            Crafting Guide gives step-by-step tutorials for making anything in Minecraft or its many mods. Just say what
-            you'd like to make, what you already have, it will do the rest, giving you a list of raw materials you need
-            to collect and step-by-step instructions of how much to make of which items in the proper order. You can
-            even ask it to include the materials and instructions for all the tools you'll need along the way!
-            
-          </p>
-        </div>
-        <div class="center">
-          <h2>
-            <p>Donate</p>
-          </h2>
-          <p>Crafting Guide is free for all, but if you find it helpful, donations in any amount are gratefully accepted.</p>
-          <div class="action">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="centered">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="GCB2TYZJYLAE6">
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-          </div>
-        </div>
-        <div class="right">
-          <h2>
-            <p>Get Involved</p>
-          </h2>
-          <p>
-            Crafting Guide is completely open-source, and you can help!  Whether you want to write a recipe book (all
-            simple JSON), or implement new features, just head over to GitHub to get started.
-          </p>
-          <div class="action">
-            <iframe src="http://ghbtns.com/github-btn.html?user=andrewminer&amp;repo=crafting-guide&amp;type=fork&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="32"></iframe>
-          </div>
-        </div>
-        <div class="divider bottom"></div>
-      </div>
+    <div class="view__feedback" style="opacity: 1; left: -271px; "><div class="form-content"><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><div class="error" style="display: none; "><p>Sending failed. Please try again later.</p></div><div class="button send disabled"><div class="bezel"><p>send</p></div></div></div><div class="tab"><p>Feedback</p></div></div>
+    <div style="display: none" class="view__screen"></div>
+    <div class="page">
+      <div class="view__header"><div class="top-row"><a href="/" class="logo"><img src="/images/site-icon.png"></a><h1>Minecraft Crafting Guide</h1><div class="addthis_sharing_toolbox placeholder"></div></div><div class="divider"><div class="button craft"><div class="bezel"><p>Craft</p></div></div><div class="button browse"><div class="bezel"><p>Browse</p></div></div><div class="button news"><div class="bezel"><p>News</p></div></div><div class="button search"><div class="bezel"><p>Search</p></div></div><div class="button login"><div class="bezel"><p>Login</p></div></div></div><div class="breadcrumbs" style="display: none; "></div></div>
+      <div style="display: none" class="content view__login_page"><div class="ready-to-login" style="display: none; "><div class="left"><h1>Login with GitHub</h1><p>Use your GitHub credentials to login and make changes on Crafting Guide. No GitHub account? Don't
+worry, you can get one for free. <a class="read-more" href="#">read more...</a>
+</p><div class="expandable-container read-more"><div class="content"><p>All changes you make on the site get submitted directly to our GitHub repo, and then published
+through the same automated deployment process as changes made by anyone else. That way, anyone
+can contribute easily: whether developer or end user.</p><p>To log in, we redirect you to GitHub's site, and once you're signed in, they'll send you back
+here. We never see your credentials, and only get the minimum set of permissions necessary to
+submit changes to the Crafting Guide repo on your behalf.</p><p>GitHub offers free accounts, so even if you don't already have one, you've got nothing to lose!
+</p></div></div><div class="actions"><div class="button login"><div class="bezel"><p>Login with GitHub</p></div></div></div></div><div class="right"><img src="/images/github-login-large.png"></div></div><div class="fetching-token" style="display: none; "><div class="left"><h1>Completing log in...</h1><p>Hang on just a second while we finish logging you in...</p><div class="actions"><img src="/images/wait.gif"></div></div><div class="right"><img src="/images/github-login-large.png"></div></div><div class="invalid-callback" style="display: none; "><div class="left"><h1>Oops!</h1><p>Sorry about that, but it looks like something went wrong with your GitHub login. Click the button below
+to try again, or use the Feedback button on the left to let us know, and we'll try to help.
+</p><div class="actions"><div class="button login"><div class="bezel"><p>Login with GitHub</p></div></div></div></div><div class="right"><img src="/images/github-login-large.png"></div></div><div class="logged-in" style="display: none; "><div class="left"><h1>All set!</h1><p>You are logged in to CraftingGuide using the following GitHub account:</p><div class="user"><div class="left"><img></div><div class="right"><div class="name"></div><div class="email"></div></div></div><p class="withRedirect">You will be redirected shortly.</p><div class="actions"><div class="button logout"><div class="bezel"><p>Logout</p></div></div></div></div><div class="right"><img src="/images/github-login-large.png" class="float-right"></div></div><div class="server-down" style=""><div class="left"><h1>Sorry!</h1><p>Our interactive editing service is down right now, but you can always submit a pull request over at the
+<a href="https://github.com/andrewminer/crafting-guide">Crafting Guide GitHub Repository</a>. We'll
+have the editing service back up soon!</p></div></div></div>
+      <div class="content-loading"><img src="/images/wait.gif"></div>
+      <div class="view__footer"><div class="divider top"></div><div class="content"><div class="left"><h2>About</h2><p>Crafting Guide gives step-by-step instructions for making anything in Minecraft or its many mods. Just
+say what you'd like to make, what you already have, it will do the rest, giving you a list of raw
+materials and instructions of which items to make in the proper order. You can even ask it to include
+the materials and instructions for all the tools you'll need along the way!
+</p></div><div class="center"><h2>Donate</h2><p>Crafting Guide is free for all, but if you find it helpful, donations in any amount are gratefully
+accepted.</p><div class="action"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="centered"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="GCB2TYZJYLAE6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form></div></div><div class="right"><h2>Get Involved</h2><p>Crafting Guide is completely open-source, and you can help!  Whether you want to write a recipe book
+(all simple JSON), or implement new features, just head over to GitHub to get started.</p><div class="action"><iframe src="http://ghbtns.com/github-btn.html?user=andrewminer&amp;repo=crafting-guide&amp;type=fork&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="32"></iframe></div></div></div><div class="divider bottom"></div></div>
     </div>
-    <script src="/js/main.js"></script>
+    <script src="/external.js"></script>
+    <script src="/internal.js"></script>
     <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       if (window.location.hostname === 'crafting-guide.com') {

@@ -1,84 +1,99 @@
-TypeError: 'undefined' is not an object (evaluating 'this.$textarea.val')
-
-  http://prerender.crafting-guide.com:8000/js/main.js:42847
-  http://prerender.crafting-guide.com:8000/js/main.js:39840
 <!DOCTYPE html><html><head>
-    <title>The Ultimate Minecraft Crafting Guide</title>
-    <meta charset="UTF-8">
+    <title>Upgrading Chests | Minecraft Crafting Guide</title>
     <link href="/images/favicon.png" rel="icon" type="image/png">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="/main.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=480">
   </head>
   <body>
-    <div class="view__feedback" style="left: -300px; "><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><button name="send" disabled="disabled">send</button><div class="error hideable hidden"><p>Sending failed. Please try again later.</p></div><div class="label"><img src="/images/paper.png"><p>Feedback</p></div></div>
-    <div class="view__screen"></div>
-    <div class="content">
-      <div class="view__header">
-        <h1><a href="/" class="logo"><img src="/images/workbench_front.png"></a>
-          <p>Minecraft Crafting Guide</p>
-        </h1>
-        <div class="addthis_sharing_toolbox"></div>
-        <div class="divider bottom">
-          <div class="login"><span class="name"></span><a href="/login/">Login</a></div>
-        </div>
-        <div class="navBar"><a data-page="home" href="/" style="z-index: 104; ">
-            <p>Home</p>
-            <div class="dot" style="opacity: 0; "></div></a><a data-page="configure" href="/configure/" style="z-index: 103; ">
-            <p>Configure</p>
-            <div class="dot" style="opacity: 0; "></div></a><a data-page="browse" href="/browse/" style="z-index: 102; ">
-            <p>Browse</p>
-            <div class="dot" style="opacity: 1; "></div></a><a data-page="craft" href="/craft/" style="z-index: 101; ">
-            <p>Craft</p>
-            <div class="dot" style="opacity: 0; "></div></a>
-          <div class="view__item_selector search">
-            <p>find an item...</p>
-          </div>
-        </div>
-      </div>
-      <div style="max-height: 0" class="page hideable view__tutorial_page hiding"><div class="sidebar"><div class="titleImage"><a><img></a></div><a target="new" class="officialPage externalLink hideable hidden"><p>Offical Documentation</p></a><ins class="view__adsense"></ins></div><div class="mainBody"><h1 class="name"></h1><div class="byline"><p>from <a href="/browse/iron_chests/">Iron Chests</a></p></div><div class="sections"></div><div class="videos section hideable hidden"><h2></h2><div class="panel"></div></div></div></div>
-      <div class="page-loading"><img src="/images/wait.gif"></div>
-      <div class="view__footer">
-        <div class="divider top"></div>
-        <div class="left">
-          <h2>
-            <p>About</p>
-          </h2>
-          <p>
-            Crafting Guide gives step-by-step tutorials for making anything in Minecraft or its many mods. Just say what
-            you'd like to make, what you already have, it will do the rest, giving you a list of raw materials you need
-            to collect and step-by-step instructions of how much to make of which items in the proper order. You can
-            even ask it to include the materials and instructions for all the tools you'll need along the way!
-            
-          </p>
-        </div>
-        <div class="center">
-          <h2>
-            <p>Donate</p>
-          </h2>
-          <p>Crafting Guide is free for all, but if you find it helpful, donations in any amount are gratefully accepted.</p>
-          <div class="action">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="centered">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="GCB2TYZJYLAE6">
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-          </div>
-        </div>
-        <div class="right">
-          <h2>
-            <p>Get Involved</p>
-          </h2>
-          <p>
-            Crafting Guide is completely open-source, and you can help!  Whether you want to write a recipe book (all
-            simple JSON), or implement new features, just head over to GitHub to get started.
-          </p>
-          <div class="action">
-            <iframe src="http://ghbtns.com/github-btn.html?user=andrewminer&amp;repo=crafting-guide&amp;type=fork&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="32"></iframe>
-          </div>
-        </div>
-        <div class="divider bottom"></div>
-      </div>
+    <div class="view__feedback" style="opacity: 1; left: -271px; "><div class="form-content"><input name="name" placeholder="name (optional)"><input name="email" placeholder="email (optional)"><label name="comment">Comment:</label><textarea name="comment"></textarea><div class="error" style="display: none; "><p>Sending failed. Please try again later.</p></div><div class="button send disabled"><div class="bezel"><p>send</p></div></div></div><div class="tab"><p>Feedback</p></div></div>
+    <div style="display: none" class="view__screen"></div>
+    <div class="page">
+      <div class="view__header"><div class="top-row"><a href="/" class="logo"><img src="/images/site-icon.png"></a><h1>Minecraft Crafting Guide</h1><div class="addthis_sharing_toolbox placeholder"></div></div><div class="divider"><div class="button craft"><div class="bezel"><p>Craft</p></div></div><div class="button browse"><div class="bezel"><p>Browse</p></div></div><div class="button news"><div class="bezel"><p>News</p></div></div><div class="button search"><div class="bezel"><p>Search</p></div></div><div class="button login"><div class="bezel"><p>Login</p></div></div></div><div class="breadcrumbs" style="display: none; "></div></div>
+      <div style="" class="content view__tutorial_page"><div class="left"><div class="view__adsense"></div></div><div class="right"><div class="about"><div class="left"><img src="/data/iron_chests/tutorials/upgrading_chests/icon.png"></div><div class="right"><div class="title">Upgrading Chests</div><div class="sourceMod">a tutorial for <a href="/browse/iron_chests/">Iron Chests</a></div><div class="officialLink" style="display: none; ">from <a></a></div></div></div><div class="tutorial-sections"><section class="view__markdown_section"><h2>Chest Capacities</h2><div class="panel"><div class="waiting" style="display: none; "><img src="/images/wait.gif"></div><div class="markdown"><p>Iron Chests adds a variety of metallic chests with steadily increasing capacity and capabilities. Here is an
+overview of all the new chests:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Rows</th>
+<th>Slots</th>
+<th>Extra Abilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/copper_chest/icon.png" alt="">   [Copper Chest]</td>
+<td>5</td>
+<td>45</td>
+<td>None</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/iron_chest/icon.png" alt="">     [Iron Chest]</td>
+<td>6</td>
+<td>54</td>
+<td>None</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/silver_chest/icon.png" alt="">   [Silver Chest]</td>
+<td>8</td>
+<td>72</td>
+<td>None</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/gold_chest/icon.png" alt="">     [Gold Chest]</td>
+<td>9</td>
+<td>81</td>
+<td>None</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/diamond_chest/icon.png" alt="">  [Diamond Chest]</td>
+<td>12</td>
+<td>108</td>
+<td>None</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/crystal_chest/icon.png" alt="">  [Crystal Chest]</td>
+<td>12</td>
+<td>108</td>
+<td>Transparent</td>
+</tr>
+<tr>
+<td><img src="/data/iron_chests/tutorials/upgrading_chests//browse/iron_chests/obsidian_chest/icon.png" alt=""> [Obsidian Chest]</td>
+<td>12</td>
+<td>108</td>
+<td>Indestructible</td>
+</tr>
+</tbody>
+</table>
+</div><div class="creating" style="display: none; "><p>Please help by adding a description!</p></div><div class="editor" style="display: none; "><div class="instructions">Edit using <a href="https://help.github.com/articles/github-flavored-markdown/" target="new">GitHub
+Flavored Markdown</a>. Use <tt>[[Item Name]]</tt> to link to another item and <tt>![](image.png)</tt>
+to add an image.</div><div class="text"><textarea></textarea><div class="sizer">Iron Chests adds a variety of metallic chests with steadily increasing capacity and capabilities. Here is an<br>overview of all the new chests:<br><br>| Name                                                              | Rows | Slots | Extra Abilities |<br>| ------------------------------------------------------------------|------|-------|---------------- |<br>| ![](/browse/iron_chests/copper_chest/icon.png)   [Copper Chest]   |    5 |    45 | None            |<br>| ![](/browse/iron_chests/iron_chest/icon.png)     [Iron Chest]     |    6 |    54 | None            |<br>| ![](/browse/iron_chests/silver_chest/icon.png)   [Silver Chest]   |    8 |    72 | None            |<br>| ![](/browse/iron_chests/gold_chest/icon.png)     [Gold Chest]     |    9 |    81 | None            |<br>| ![](/browse/iron_chests/diamond_chest/icon.png)  [Diamond Chest]  |   12 |   108 | None            |<br>| ![](/browse/iron_chests/crystal_chest/icon.png)  [Crystal Chest]  |   12 |   108 | Transparent     |<br>| ![](/browse/iron_chests/obsidian_chest/icon.png) [Obsidian Chest] |   12 |   108 | Indestructible  |</div></div></div><div class="view__markdown_image_list" style="display: none; "><h3>Images Referenced</h3><div class="image_container"><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/copper_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/crystal_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/diamond_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/gold_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/iron_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/obsidian_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>/browse/iron_chests/silver_chest/icon.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div></div></div><div class="footer" style="display: none; "><div class="question"><a href="javascript:void;">Confused? Click here to ask a question!</a></div><div class="error" style="display: none; "><p></p></div><div class="buttons"><div class="button edit" style="display: none; "><div class="bezel"><p>edit</p></div></div><div class="button save" style="display: none; "><div class="bezel"><p>save</p></div></div><div class="button preview" style="display: none; "><div class="bezel"><p>preview</p></div></div><div class="button cancel" style="display: none; "><div class="bezel"><p>cancel</p></div></div><div class="button return" style="display: none; "><div class="bezel"><p>return</p></div></div></div></div><div class="confirming" style="display: none; "><p>Thanks for your help!</p><p>Your changes will appear on the site in a few minutes.</p></div><div class="appologizing" style="display: none; "><p>Sorry, but something went wrong.</p><p>Please try again after a few moments.</p></div></div></section><section class="view__markdown_section"><h2>Upgrades</h2><div class="panel"><div class="waiting" style="display: none; "><img src="/images/wait.gif"></div><div class="markdown"><p>When you want a larger chest, you have two options: make a new chest, or upgrade an existing one. Making a new
+chest works exactly like you'd expect: put the materials on the crafting table, and you get the new item. But,
+this leaves you with the trouble of transferring items from the existing chest to the new one.</p>
+<p>In that case, the better options is to upgrade an existing chest in place. To start, you'll need a an existing
+chest placed in the world somewhere. It can even have items already in it.  Next, you create the upgrade you
+need based upon the chest you have (e.g., an [Iron Chest]) and the chest you want to upgrade to (e.g., a
+[Gold Chest]). In this example, you'd need the [Iron to Gold Chest Upgrade].</p>
+<p>Once you've made the upgrade, you just place it in your hotbar and right-click on the chest you'd like to
+upgrade. The chest will then change to be the new type in place, and without dumping any of its contents. There
+are quite a few different upgrades, but not every possible combination is represented.  Here's a diagram showing
+which upgrades are possible:</p>
+<p><img src="/data/iron_chests/tutorials/upgrading_chests/upgrade_path_diagram.png" alt=""></p>
+</div><div class="creating" style="display: none; "><p>Please help by adding a description!</p></div><div class="editor" style="display: none; "><div class="instructions">Edit using <a href="https://help.github.com/articles/github-flavored-markdown/" target="new">GitHub
+Flavored Markdown</a>. Use <tt>[[Item Name]]</tt> to link to another item and <tt>![](image.png)</tt>
+to add an image.</div><div class="text"><textarea></textarea><div class="sizer">When you want a larger chest, you have two options: make a new chest, or upgrade an existing one. Making a new<br>chest works exactly like you'd expect: put the materials on the crafting table, and you get the new item. But,<br>this leaves you with the trouble of transferring items from the existing chest to the new one.<br><br>In that case, the better options is to upgrade an existing chest in place. To start, you'll need a an existing<br>chest placed in the world somewhere. It can even have items already in it.  Next, you create the upgrade you<br>need based upon the chest you have (e.g., an [Iron Chest]) and the chest you want to upgrade to (e.g., a<br>[Gold Chest]). In this example, you'd need the [Iron to Gold Chest Upgrade].<br><br>Once you've made the upgrade, you just place it in your hotbar and right-click on the chest you'd like to<br>upgrade. The chest will then change to be the new type in place, and without dumping any of its contents. There<br>are quite a few different upgrades, but not every possible combination is represented.  Here's a diagram showing<br>which upgrades are possible:<br><br>![](upgrade_path_diagram.png)</div></div></div><div class="view__markdown_image_list" style="display: none; "><h3>Images Referenced</h3><div class="image_container"><div class="view__markdown_image"><div class="loaded"><div class="thumbnail"><img src="/images/unknown.png"></div><div class="dynamic"><div class="button"><div class="bezel"><p>Choose</p></div></div><div class="fileName"><p>upgrade_path_diagram.png</p></div><div class="error" style="display: none; "><p></p></div></div><form><input type="file" accept="image/gif,image/jpeg,image/png" multiple="false"></form></div><div class="loading" style="display: none; "><p>checking for image...</p></div></div></div></div><div class="footer" style="display: none; "><div class="question"><a href="javascript:void;">Confused? Click here to ask a question!</a></div><div class="error" style="display: none; "><p></p></div><div class="buttons"><div class="button edit" style="display: none; "><div class="bezel"><p>edit</p></div></div><div class="button save" style="display: none; "><div class="bezel"><p>save</p></div></div><div class="button preview" style="display: none; "><div class="bezel"><p>preview</p></div></div><div class="button cancel" style="display: none; "><div class="bezel"><p>cancel</p></div></div><div class="button return" style="display: none; "><div class="bezel"><p>return</p></div></div></div></div><div class="confirming" style="display: none; "><p>Thanks for your help!</p><p>Your changes will appear on the site in a few minutes.</p></div><div class="appologizing" style="display: none; "><p>Sorry, but something went wrong.</p><p>Please try again after a few moments.</p></div></div></section></div><section class="videos" style="display: none; "><h2></h2><div class="panel"><div class="video-container"></div></div></section></div></div>
+      <div class="content-loading"><img src="/images/wait.gif"></div>
+      <div class="view__footer"><div class="divider top"></div><div class="content"><div class="left"><h2>About</h2><p>Crafting Guide gives step-by-step instructions for making anything in Minecraft or its many mods. Just
+say what you'd like to make, what you already have, it will do the rest, giving you a list of raw
+materials and instructions of which items to make in the proper order. You can even ask it to include
+the materials and instructions for all the tools you'll need along the way!
+</p></div><div class="center"><h2>Donate</h2><p>Crafting Guide is free for all, but if you find it helpful, donations in any amount are gratefully
+accepted.</p><div class="action"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="centered"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="GCB2TYZJYLAE6"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form></div></div><div class="right"><h2>Get Involved</h2><p>Crafting Guide is completely open-source, and you can help!  Whether you want to write a recipe book
+(all simple JSON), or implement new features, just head over to GitHub to get started.</p><div class="action"><iframe src="http://ghbtns.com/github-btn.html?user=andrewminer&amp;repo=crafting-guide&amp;type=fork&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="32"></iframe></div></div></div><div class="divider bottom"></div></div>
     </div>
-    <script src="/js/main.js"></script>
+    <script src="/external.js"></script>
+    <script src="/internal.js"></script>
     <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       if (window.location.hostname === 'crafting-guide.com') {

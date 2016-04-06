@@ -1,6 +1,6 @@
 deployment:
     staging:
-        branch: master
+        branch: staging
         commands:
             - ./scripts/deploy --staging
     production:
