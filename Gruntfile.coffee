@@ -32,6 +32,9 @@ module.exports = (grunt)->
     grunt.registerTask 'default', 'rebuilds the sitemap and prerenders any missing pages',
         ['prerender']
 
+    grunt.registerTask 'deploy', 'deploy the project to staging and production via CircleCI',
+        ['deploy:staging', 'deploy:prod']
+
     grunt.registerTask 'deploy:prod', 'deploy the project to production via CircleCI',
         ['script:deploy:prod']
 
